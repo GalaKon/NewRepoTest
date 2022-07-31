@@ -20,7 +20,7 @@ public class CaptureNetworkTraffic {
         devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
     }
 
-    public List<String> captureHttpRequests() {
+    public List<String> captureHttpSearchLanguagesPageRequests() {
         List<String> postRequest = new ArrayList<>();
 
         devTools.addListener(Network.requestWillBeSent(),
@@ -39,7 +39,7 @@ public class CaptureNetworkTraffic {
         return postRequest;
     }
 
-    public List<String> captureHttpResponses() {
+    public List<String> captureHttpSearchLanguagesPageResponses() {
         List<String> postResponse = new ArrayList<>();
 
         devTools.addListener(Network.responseReceived(),
@@ -56,4 +56,39 @@ public class CaptureNetworkTraffic {
         return postResponse;
     }
 
+    public List<String> captureHttpSubmitNewLanguagePageRequests() {
+        List<String> postRequest = new ArrayList<>();
+
+        devTools.addListener(Network.requestWillBeSent(),
+                entry -> {
+                    if (
+                            entry.getRequest().getUrl().contains("/submitnewlanguage.html")
+                                    && entry.getRequest().getMethod().equalsIgnoreCase("POST")
+                    ) {
+                        postRequest.add(entry.getRequest().getMethod());
+                        postRequest.add(entry.getRequest().getUrl());
+                        postRequest.add(entry.getRequest().getPostData().toString());
+                        postRequest.add(entry.getRequest().getTrustTokenParams().toString());
+                    }
+                });
+
+        return postRequest;
+    }
+
+    public List<String> captureHttpSubmitNewLanguagePageResponses() {
+        List<String> postResponse = new ArrayList<>();
+
+        devTools.addListener(Network.responseReceived(),
+                entry -> {
+                    if (
+                            entry.getResponse().getUrl().contains("submitnewlanguage.htm")
+                    ) {
+                        postResponse.add(entry.getResponse().getStatus().toString());
+                        postResponse.add(entry.getResponse().getStatusText());
+                        postResponse.add(entry.getResponse().getUrl());
+                    }
+                });
+
+        return postResponse;
+    }
 }
