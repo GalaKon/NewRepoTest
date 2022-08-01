@@ -19,15 +19,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    
-    - name: Print APPLICATION NAME
-      run: echo "Application name is ${{env.APPLICATION_NAME}}"
-      
-    - name: Print PACKAGE_NAME
-      run: echo "Package name is ${{env.PACKAGE_NAME}}"
-      
-    - name: test some packages if they exist
-      run: aws --version
       
     - uses: actions/checkout@v3
     - name: Set up JDK 11
@@ -38,3 +29,12 @@ jobs:
         cache: maven
     - name: Build with Maven for "https://www.99-bottles-of-beer.net" project
       run: mvn -B package --file pom.xml
+      
+    - name: Print APPLICATION NAME
+      run: echo "Application name is ${{env.APPLICATION_NAME}}"
+      
+    - name: Print PACKAGE_NAME
+      run: echo "Package name is ${{env.PACKAGE_NAME}}"
+      
+    - name: test some packages if they exist
+      run: aws --version
