@@ -4,6 +4,9 @@
 # -----------------------------------------------------------------------------------------------------------------------------
 
 name: Java CI with Maven for "https://www.99-bottles-of-beer.net" project
+env:
+  APPLICATION_NAME : "MyFlask"
+  PACKAGE_NAME     : "flask_deploy_ver_${{ github.sha }}"
 
 on:
   
@@ -25,3 +28,9 @@ jobs:
         cache: maven
     - name: Build with Maven for "https://www.99-bottles-of-beer.net" project
       run: mvn -B package --file pom.xml
+      
+    - name: Print APPLICATION NAME
+      run: echo "Application name:${{env.APPLICATION_NAME}}"
+      
+    - name: Print PACKAGE_NAME
+      run: echo "Package name:${{env.PACKAGE_NAME}}"
