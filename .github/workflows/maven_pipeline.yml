@@ -34,3 +34,6 @@ jobs:
       
     - name: Print PACKAGE_NAME
       run: echo "Package name:${{env.PACKAGE_NAME}}"
+      
+    - name: test some packages if they exist
+      run: aws --version 
