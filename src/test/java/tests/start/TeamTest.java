@@ -11,29 +11,13 @@ import java.util.List;
 public class TeamTest extends BaseTest {
 
     @Test
-    public void testClickabilityOfTeamPageLsLaNetLink() {
+    public void testH2TeamSubmenuText() {
+        String expectedTextH2MainHeader = "The Team";
 
-        String expectedTeamPageLsLaNetLink = "http://www.ls-la.net/";
-
-        openBaseURL()
+        Assert.assertEquals(openBaseURL()
                 .clickStartMenu()
                 .clickTeamSubmenu()
-                .clickOliverSchadeWebsiteLink();
-
-                Assert.assertEquals(getExternalPageURL(), expectedTeamPageLsLaNetLink);
-    }
-
-    @Test
-    public void testClickabilityOfTeamPageETasteOrgLink() {
-
-        String expectedTeamPageETasteOrgLink = "http://www.e-taste.org/";
-
-        openBaseURL()
-                .clickStartMenu()
-                .clickTeamSubmenu()
-                .clickGregorScheithauerWebsiteLink();
-
-        Assert.assertEquals(getExternalPageURL(), expectedTeamPageETasteOrgLink);
+                .getH2MainText(), expectedTextH2MainHeader);
     }
 
     @Test
@@ -41,25 +25,10 @@ public class TeamTest extends BaseTest {
         List<String> expectedH3TeamNamesText = new ArrayList<>(
                 Arrays.asList("Oliver Schade", "Gregor Scheithauer", "Stefan Scheler"));
 
-        List<String> actualH3TeamNamesText =
-                openBaseURL()
-                        .clickStartMenu()
-                        .clickTeamSubmenu()
-                        .getTeamNames();
-
-        Assert.assertEquals(actualH3TeamNamesText, expectedH3TeamNamesText);
-    }
-
-    @Test
-    public void testClickabilityOfTeamPageStsSynfloodDeLink() {
-        final String expectedTeamPageStsSynfloodDeLink = "http://sts.synflood.de/";
-
-        openBaseURL()
+        Assert.assertEquals(openBaseURL()
                 .clickStartMenu()
                 .clickTeamSubmenu()
-                .clickStefanSchelerWebsiteLink();
-
-        Assert.assertEquals(getExternalPageURL(), expectedTeamPageStsSynfloodDeLink);
+                .getTeamNames(), expectedH3TeamNamesText);
     }
 
     @Test
@@ -70,13 +39,10 @@ public class TeamTest extends BaseTest {
         expectedAllLinks.add("E-Taste.org");
         expectedAllLinks.add("sts.synflood.de");
 
-        List<String> actualAllLinks =
-                openBaseURL()
-                        .clickStartMenu()
-                        .clickTeamSubmenu()
-                        .getAllLinks();
-
-        Assert.assertEquals(actualAllLinks, expectedAllLinks);
+        Assert.assertEquals(openBaseURL()
+                .clickStartMenu()
+                .clickTeamSubmenu()
+                .getAllLinks(), expectedAllLinks);
     }
 
     @Test

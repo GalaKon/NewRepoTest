@@ -7,27 +7,32 @@ import runner.BaseTest;
 public class StartTest extends BaseTest {
 
     @Test
+    public void testMenuStartText() {
+        final String expectedMenuStartText = "Start";
+
+        Assert.assertEquals(openBaseURL()
+                .getStartMenu()
+                .getText(), expectedMenuStartText.toUpperCase());
+    }
+
+    @Test
     public void testInfoSubmenuText() {
         final String expectedInfoSubmenuText = "History";
 
-        String actualInfoSubmenuText = openBaseURL()
+        Assert.assertEquals(openBaseURL()
                 .getText(openBaseURL()
-                        .clickStartMenu()
-                        .getInfoSubmenu());
-
-        Assert.assertEquals(actualInfoSubmenuText, expectedInfoSubmenuText);
+                .clickStartMenu()
+                .getInfoSubmenu()), expectedInfoSubmenuText);
     }
 
     @Test
     public void testInfoSubmenuLinkText() {
         final String expectedInfoSubmenuLinkText = "http://www.99-bottles-of-beer.net/info.html";
 
-        String actualInfoSubmenuLinkText = openBaseURL()
+        Assert.assertEquals(openBaseURL()
                 .clickStartMenu()
                 .getInfoSubmenu()
-                .getAttribute("href");
-
-        Assert.assertEquals(actualInfoSubmenuLinkText, expectedInfoSubmenuLinkText);
+                .getAttribute("href"), expectedInfoSubmenuLinkText);
     }
 
     @Test
@@ -35,157 +40,124 @@ public class StartTest extends BaseTest {
 
         final String expectedH2Header = "Welcome to 99 Bottles of Beer";
 
-        String actualH2Header = openBaseURL()
+        Assert.assertEquals(openBaseURL()
                 .clickStartMenu()
-                .getH2MainText();
-
-        Assert.assertEquals(actualH2Header, expectedH2Header);
+                .getH2MainText(), expectedH2Header);
     }
 
     @Test
     public void testHistoricInformationLinkText() {
         final String expectedHistoricInformationLinkText = "historic information";
 
-        String actualHistoricInformationLinkText =
-                openBaseURL()
-                        .clickStartMenu()
-                        .getHistoricInformationLinkText();
-
-        Assert.assertEquals(actualHistoricInformationLinkText, expectedHistoricInformationLinkText);
+        Assert.assertEquals(openBaseURL()
+                .clickStartMenu()
+                .getHistoricInformationLinkText(), expectedHistoricInformationLinkText);
     }
 
     @Test
     public void testHistoricInformationLink() {
         final String expectedHistoricInformationLinkTitle = "99 Bottles of Beer | Background and historic information";
 
-        String actualHistoricInformationLinkTitl =
-                openBaseURL()
-                        .clickStartMenu()
-                        .clickHistoricInformationLink()
-                        .getTitle();
-
-        Assert.assertEquals(actualHistoricInformationLinkTitl, expectedHistoricInformationLinkTitle);
+        Assert.assertEquals(openBaseURL()
+                .clickStartMenu()
+                .clickHistoricInformationLink()
+                .getTitle(), expectedHistoricInformationLinkTitle);
     }
 
     @Test
     public void testHereLinkText() {
         final String expectedHereLinkText = "here";
 
-        String actualHereLinkTextText =
-                openBaseURL()
-                        .clickStartMenu()
-                        .getHereLinkText();
-
-        Assert.assertEquals(actualHereLinkTextText, expectedHereLinkText);
+        Assert.assertEquals(openBaseURL()
+                .clickStartMenu()
+                .getHereLinkText(), expectedHereLinkText);
     }
 
     @Test
     public void testHereLink() {
         final String expectedHereLinkTitle = "99 Bottles of Beer | The lyrics to the song 99 Bottles of Beer";
 
-        String actualHereLinkTitle =
-                openBaseURL()
-                        .clickStartMenu()
-                        .clickHereLink()
-                        .getTitle();
-
-        Assert.assertEquals(actualHereLinkTitle, expectedHereLinkTitle);
+        Assert.assertEquals(openBaseURL()
+                .clickStartMenu()
+                .clickHereLink()
+                .getTitle(), expectedHereLinkTitle);
     }
 
     @Test
     public void testSubmitYourOwnPieceOfCodeLinkText() {
         final String expectedSubmitYourOwnPieceOfCodeLinkText = "submit your own piece of code";
 
-        String actualSubmitYourOwnPieceOfCodeLinkText =
-                openBaseURL()
-                        .clickStartMenu()
-                        .getSubmitYourOwnPieceOfCodeLinkText();
-
-        Assert.assertEquals(actualSubmitYourOwnPieceOfCodeLinkText, expectedSubmitYourOwnPieceOfCodeLinkText);
+        Assert.assertEquals(openBaseURL()
+                .clickStartMenu()
+                .getSubmitYourOwnPieceOfCodeLinkText(), expectedSubmitYourOwnPieceOfCodeLinkText);
     }
 
     @Test
     public void testSubmitYourOwnPieceOfCodeLink() {
         final String expectedSubmitYourOwnPieceOfCodeLinkTitle = "99 Bottles of Beer | Submit new Language";
 
-        String actualSubmitYourOwnPieceOfCodeLinkTitle =
-                openBaseURL()
-                        .clickStartMenu()
-                        .clickSubmitYourOwnPieceOfCodeLink()
-                        .getTitle();
-
-        Assert.assertEquals(actualSubmitYourOwnPieceOfCodeLinkTitle, expectedSubmitYourOwnPieceOfCodeLinkTitle);
+        Assert.assertEquals(openBaseURL()
+                .clickStartMenu()
+                .clickSubmitYourOwnPieceOfCodeLink()
+                .getTitle(), expectedSubmitYourOwnPieceOfCodeLinkTitle);
     }
 
     @Test
     public void testGuestbookLinkText() {
         final String expectedGuestbookLinkText = "guestbook";
 
-        String actualGuestbookLinkText =
-                openBaseURL()
-                        .clickStartMenu()
-                        .getGuestbookLinkText();
-
-        Assert.assertEquals(actualGuestbookLinkText, expectedGuestbookLinkText);
+        Assert.assertEquals(openBaseURL()
+                .clickStartMenu()
+                .getGuestbookLinkText(), expectedGuestbookLinkText);
     }
 
     @Test
     public void testGuestbookLink() {
         final String expectedGuestbookLinkTitle = "99 Bottles of Beer | Guestbook";
 
-        String actualGuestbookLinkTitle =
-                openBaseURL()
-                        .clickStartMenu()
-                        .clickGuestbookLink()
-                        .getTitle();
-
-        Assert.assertEquals(actualGuestbookLinkTitle, expectedGuestbookLinkTitle);
+        Assert.assertEquals(openBaseURL()
+                .clickStartMenu()
+                .clickGuestbookLink()
+                .getTitle(), expectedGuestbookLinkTitle);
     }
 
     @Test
     public void testTeamMembersLinkText() {
         final String expectedTeamMembersLinkText = "team members";
 
-        String actualTeamMembersLinkText =
-                openBaseURL()
-                        .clickStartMenu()
-                        .getTeamMembersLinkText();
-
-        Assert.assertEquals(actualTeamMembersLinkText, expectedTeamMembersLinkText);
+        Assert.assertEquals(openBaseURL()
+                .clickStartMenu()
+                .getTeamMembersLinkText(), expectedTeamMembersLinkText);
     }
 
     @Test
     public void testTeamMembersLink() {
         final String expectedTeamMembersLinkTitle = "99 Bottles of Beer | The Team";
 
-        String actualTeamMembersLinkTitle =
-                openBaseURL()
-                        .clickStartMenu()
-                        .clickTeamMembersLink()
-                        .getTitle();
-
-        Assert.assertEquals(actualTeamMembersLinkTitle, expectedTeamMembersLinkTitle);
+        Assert.assertEquals(openBaseURL()
+                .clickStartMenu()
+                .clickTeamMembersLink()
+                .getTitle(), expectedTeamMembersLinkTitle);
     }
 
     @Test
     public void testLastParagraphText() {
-        final String expectedLastParagraphText = "Have a lot of fun,\n" +
-                "Oliver, Gregor and Stefan";
 
-        String actualLastParagraphText = openBaseURL()
+        StringBuilder lastParagraph = new StringBuilder();
+        lastParagraph
+                .append("Have a lot of fun,\n")
+                .append("Oliver, Gregor and Stefan");
+
+        Assert.assertEquals(openBaseURL()
                 .clickStartMenu()
-                .getLastParagraphText();
-
-        Assert.assertEquals(actualLastParagraphText, expectedLastParagraphText);
+                .getLastParagraphText(), lastParagraph.toString());
     }
 
     @Test
     public void testPrivacySubmenuText() {
         final String expectedPrivacySubmenuText = "Privacy";
 
-        String actualPrivacySubmenuText = openBaseURL()
-                .getPrivacySubmenuText();
-
-        Assert.assertEquals(actualPrivacySubmenuText, expectedPrivacySubmenuText);
+        Assert.assertEquals(openBaseURL()
+                .getPrivacySubmenuText(), expectedPrivacySubmenuText);
     }
 }

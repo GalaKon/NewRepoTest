@@ -7,28 +7,22 @@ import runner.BaseTest;
 public class AbcTest extends BaseTest {
 
     @Test
-    public void testHowManyCategoriesInBrowseLanguage() {
+    public void testAmountOfBrowseLanguageCategories() {
         int expectedResult = 27;
 
-        int actualResult =
-                openBaseURL()
-                        .clickBrowseLanguagesMenu()
-                        .getAllSubmenu()
-                        .size();
-
-        Assert.assertEquals(actualResult, expectedResult);
+        Assert.assertEquals(openBaseURL()
+                .clickBrowseLanguagesMenu()
+                .getAllSubmenu()
+                .size(), expectedResult);
     }
 
     @Test
     public void testTableTitles() {
         String expectedTableTitles = "Language, Author, Date, Comments, Rate";
 
-        String actualTableTitles =
-                openBaseURL()
-                        .clickBrowseLanguagesMenu()
-                        .getTitlesTable();
-
-        Assert.assertEquals(actualTableTitles, expectedTableTitles);
+        Assert.assertEquals(openBaseURL()
+                .clickBrowseLanguagesMenu()
+                .getTitlesTable(), expectedTableTitles);
     }
 
     @Test
@@ -36,24 +30,27 @@ public class AbcTest extends BaseTest {
 
         final String expectedResultAllNamesOfSubmenu = "0-9ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-        String actualResultAllNamesOfSubmenu = openBaseURL()
+        Assert.assertEquals(openBaseURL()
                 .clickBrowseLanguagesMenu()
-                .getAllNamesOfSubmenu();
-
-        Assert.assertEquals(
-                actualResultAllNamesOfSubmenu, expectedResultAllNamesOfSubmenu);
+                .getAllNamesOfSubmenu(), expectedResultAllNamesOfSubmenu);
     }
 
     @Test
-    public void testSubmitNewLanguageCategoryL() {
-        final String expectedResult = "Category L";
+    public void testZeroNineSubmenuText() {
+        final String expectedTextZeroNineSubmenu = "0-9";
 
-        String actualResult =
-                openBaseURL()
-                        .clickBrowseLanguagesMenu()
-                        .clickLSubmenu()
-                        .getH2MainText();
+        Assert.assertEquals(openBaseURL()
+                .clickBrowseLanguagesMenu()
+                .getZeroSubmenuText(), expectedTextZeroNineSubmenu);
+    }
 
-        Assert.assertEquals(actualResult, expectedResult);
+    @Test
+    public void testZeroSubmenuLinkText() {
+        final String expectedLinkTextZeroSubmenu = "http://www.99-bottles-of-beer.net/0.html";
+
+        Assert.assertEquals(openBaseURL()
+                .clickBrowseLanguagesMenu()
+                .getZeroSubmenu()
+                .getAttribute("href"), expectedLinkTextZeroSubmenu);
     }
 }

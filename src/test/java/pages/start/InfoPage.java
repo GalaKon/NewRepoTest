@@ -3,7 +3,6 @@ package pages.start;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import pages.Mirrors1Page;
 
 import java.util.ArrayList;
 import java.util.List;

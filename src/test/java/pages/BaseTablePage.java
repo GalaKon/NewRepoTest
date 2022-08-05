@@ -50,7 +50,6 @@ public abstract class BaseTablePage<LangPage> extends MainPage {
         return getDriver().findElement(By.linkText(languageName));
     }
 
-
     public String getTextPTag() {
 
         return getText(getPTagWithText());

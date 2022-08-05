@@ -7,28 +7,22 @@ import runner.BaseTest;
 public class ZeroTest extends BaseTest {
 
     @Test
-    public void testH2MainText() {
+    public void testH2MainBrowseLanguagesText() {
         final String expectedH2MainText = "Category 0-9";
 
-        String actualH2MainText =
-                openBaseURL()
-                        .clickBrowseLanguagesMenu()
-                        .clickZeroSubmenu()
-                        .getH2MainText();
-
-        Assert.assertEquals(actualH2MainText, expectedH2MainText);
+        Assert.assertEquals(openBaseURL()
+                .clickBrowseLanguagesMenu()
+                .clickZeroSubmenu()
+                .getH2MainText(), expectedH2MainText);
     }
 
     @Test
-    public void testNumberOfLanguages() {
+    public void testNumberOfZeroSubmenuLanguages() {
         final int expectedNumberOfLanguages = 10;
 
-        int actualNumberOfLanguages =
-                openBaseURL().
-                        clickBrowseLanguagesMenu()
-                        .clickZeroSubmenu()
-                        .getCountTDLinks();
-
-        Assert.assertEquals(actualNumberOfLanguages, expectedNumberOfLanguages);
+        Assert.assertEquals(openBaseURL().
+                clickBrowseLanguagesMenu()
+                .clickZeroSubmenu()
+                .getCountTDLinks(), expectedNumberOfLanguages);
     }
 }

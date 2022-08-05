@@ -1,6 +1,7 @@
-package pages;
+package pages.start;
 
 import org.openqa.selenium.WebDriver;
+import pages.BasePage;
 
 public class Mirrors1Page extends BasePage {
 

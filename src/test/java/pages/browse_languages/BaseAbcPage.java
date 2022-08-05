@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pages.BaseTablePage;
 import pages.browse_languages.letters.*;
+
 import java.util.List;
 
 public abstract class BaseAbcPage<LangPage> extends BaseTablePage<LangPage> {
@@ -174,7 +175,7 @@ public abstract class BaseAbcPage<LangPage> extends BaseTablePage<LangPage> {
             result.append(li.getText());
         }
 
-        return  result.toString();
+        return result.toString();
     }
 
     public ZeroPage clickZeroSubmenu() {

@@ -11,6 +11,7 @@ import java.util.List;
 public class KPage extends BaseAbcPage<LanguagesPage> {
 
     private final By ALL_TR_K_LANGUAGES = By.xpath("//tr[@onmouseover]");
+    private final By LINK_LANGUAGE_KOTLIN = By.xpath("//a[@href='language-kotlin-2901.html']");
 
     public KPage(WebDriver driver) {
 
@@ -31,5 +32,11 @@ public class KPage extends BaseAbcPage<LanguagesPage> {
     public int getNumberOfLanguages() {
 
         return getAllTrs().size();
+    }
+
+    public KPage clickKotlin() {
+        getDriver().findElement(LINK_LANGUAGE_KOTLIN).click();
+
+        return new KPage(getDriver());
     }
 }
