@@ -12,7 +12,6 @@ on: [push]
 
 jobs:
   build_1:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -22,7 +21,7 @@ jobs:
       uses: actions/setup-java@v3
       with:
         java-version: '11'
-        distribution: 'temurin'
+        distribution: 'adopt'
         cache: maven
     - name: Build with Maven for "https://www.99-bottles-of-beer.net" project
       run: mvn -B package --file pom.xml
