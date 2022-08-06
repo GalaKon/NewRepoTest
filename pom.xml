@@ -13,6 +13,16 @@
 
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
+
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <configuration>
+                <forkCount>3</forkCount>
+                <reuseForks>true</reuseForks>
+                <argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
+            </configuration>
+        </plugin>
     </properties>
 
     <dependencies>
@@ -34,4 +44,5 @@
             <version>5.2.1</version>
         </dependency>
     </dependencies>
+    
 </project>
