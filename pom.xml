@@ -1,37 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project> xmlns="http://maven.apache.org/POM/4.0.0"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion><![CDATA[
 
-    <groupId>com.qaforevryone</groupId>
-    <artifactId>AutomationQA_04</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    ]]><groupId><![CDATA[com.qaforevryone]]></groupId>
+    <artifactId>AutomationQA_04</artifactId><![CDATA[
+    ]]><version>1.0-SNAPSHOT</version><![CDATA[
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    ]]><properties><![CDATA[
+        ]]><project.build.sourceEncoding>UTF-8</project.build.sourceEncoding><![CDATA[
 
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
-    </properties>
+        ]]><maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target><![CDATA[
+    ]]></properties><![CDATA[
 
-    <dependencies>
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>7.6.1</version>
-        </dependency>
+    ]]><dependencies>
+        <dependency><![CDATA[
+            ]]><groupId>org.testng</groupId><![CDATA[
+            ]]><artifactId>testng</artifactId><![CDATA[
+            ]]><version>7.4.0</version><![CDATA[
+        ]]></dependency>
 
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>4.3.0</version>
-        </dependency>
+        </dependency><![CDATA[
 
-        <dependency>
-            <groupId>io.github.bonigarcia</groupId>
-            <artifactId>webdrivermanager</artifactId>
-            <version>4.4.1</version>
-        </dependency>
+        ]]><dependency><![CDATA[
+            ]]><groupId>io.github.bonigarcia</groupId><![CDATA[
+            ]]><artifactId>webdrivermanager</artifactId><![CDATA[
+            ]]><version>4.4.1</version>
+        </dependency><![CDATA[
+    ]]></dependencies><![CDATA[
+]]></project>
     </dependencies>
 </project>
