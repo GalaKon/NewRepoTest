@@ -13,23 +13,13 @@
 
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
-
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-surefire-plugin</artifactId>
-            <configuration>
-                <forkCount>3</forkCount>
-                <reuseForks>true</reuseForks>
-                <argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
-            </configuration>
-        </plugin>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>7.6.1</version>
+            <version>7.4.0</version>
         </dependency>
 
         <dependency>
@@ -41,8 +31,7 @@
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
-            <version>5.2.1</version>
+            <version>4.4.1</version>
         </dependency>
     </dependencies>
-    
 </project>
