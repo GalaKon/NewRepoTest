@@ -4,9 +4,6 @@
 # -----------------------------------------------------------------------------------------------------------------------------
 
 name: Java CI with Maven for "https://www.99-bottles-of-beer.net" project
-env:
-  APPLICATION_NAME : "MyFlask"
-  PACKAGE_NAME     : "flask_deploy_ver_${{ github.sha }}"
 
 on: [push]
 
