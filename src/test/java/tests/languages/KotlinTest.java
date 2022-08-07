@@ -12,7 +12,7 @@ public class KotlinTest extends BaseTest {
             dataProviderClass = TestData.class,
             dataProvider = "KotlinPageTestData"
     )
-    public void testSwitchFromKotlinLanguagePageToRedditLogInPage(String title) {
+    public void testSwitchFromKotlinLanguagePageToRedditLogInPageWithDataProv(String title) {
 
         openBaseURL()
                 .clickBrowseLanguagesMenu()
@@ -22,5 +22,22 @@ public class KotlinTest extends BaseTest {
         KotlinPage kp = new KotlinPage(getDriver());
 
         Assert.assertEquals(title, kp.clickRedditIcon().getTitle());
+    }
+
+    @Test
+    public void testSwitchFromKotlinLanguagePageToRedditLogInPageWithGeneric(){
+
+        final String KOTLIN_LANGUAGE = "Kotlin";
+
+        final String expectedSwitchToLoginPageReddit = "reddit.com: Log in";
+
+        String actualSwitchToLoginPageReddit = openBaseURL()
+                .clickBrowseLanguagesMenu()
+                .clickKSubmenu()
+                .clickLanguage(KOTLIN_LANGUAGE)
+                .clickRedditIcon()
+                .getTitle();
+
+        Assert.assertEquals(actualSwitchToLoginPageReddit, expectedSwitchToLoginPageReddit);
     }
 }
