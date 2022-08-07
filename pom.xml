@@ -13,14 +13,7 @@
 
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
-
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-surefire-plugin</artifactId>
-            <configuration>
-                <testFailureIgnore>true</testFailureIgnore>
-            </configuration>
-        </plugin>
+        
     </properties>
 
     <dependencies>
