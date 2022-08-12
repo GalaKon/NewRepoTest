@@ -21,4 +21,4 @@ jobs:
         distribution: 'adopt'
         cache: maven
     - name: Build with Maven for "https://www.99-bottles-of-beer.net" project
-      run: mvn test
+      run: mvn clean test
